@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Reaver1000/sql-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/Reaver1000/sql-query-builder/actions/workflows/ci.yml)
 
-An interactive SQL playground (Streamlit + DuckDB) with a library of **55 tested query templates** — every template is executed against the sample database by the test suite, so the number in this sentence can't silently rot.
+An interactive SQL playground built with Streamlit and DuckDB. It contains **55 tested query templates**, and the test suite executes every template against a deterministic sample database so the claim cannot silently drift.
 
 ```bash
 pip install -r requirements.txt
