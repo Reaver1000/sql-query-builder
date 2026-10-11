@@ -14,6 +14,36 @@ from templates import TEMPLATES, template_count
 
 st.set_page_config(page_title="SQL Query Playground", page_icon="🔍", layout="wide")
 
+BRAND_CSS = """
+<style>
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("https://raw.githubusercontent.com/Reaver1000/sql-query-builder/master/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+    font-display: swap;
+}
+#MainMenu, footer { visibility: hidden; }
+header[data-testid="stHeader"] { background: #0d1117; }
+h1, h2, h3, .st-emotion-cache-10xing0b {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    letter-spacing: -0.5px;
+}
+div[data-testid="stMetric"] {
+    background: #161b22;
+    border: 1px solid #2b3442;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 4px 14px #00000030;
+}
+div[data-testid="stMetric"] label { font-size: 0.78rem; color: #93a0b4; }
+section[data-testid="stSidebar"] { border-right: 1px solid #2b3442; }
+div[data-testid="stExpander"] { border: 1px solid #2b3442; border-radius: 10px; }
+.stTabs [data-baseweb="tab-list"] { gap: 4px; }
+.stTabs [data-baseweb="tab"] { border-radius: 8px 8px 0 0; }
+.stTabs [aria-selected="true"] { background: #161b22; }
+</style>
+"""
+st.markdown(BRAND_CSS, unsafe_allow_html=True)
+
 
 @st.cache_resource
 def get_connection():
@@ -125,8 +155,17 @@ def render_results() -> None:
 
 
 def main() -> None:
-    st.title("🔍 SQL Query Playground")
-    st.markdown("Run SQL against a sample e-commerce database — or start from a tested template.")
+    st.markdown(
+        """
+        <h1 style="margin:0 0 .35rem;font-size:2.5rem;letter-spacing:-1.5px;
+                   background:linear-gradient(90deg,#7ee787,#6cb2ff);
+                   -webkit-background-clip:text;background-clip:text;color:transparent;">
+        SQL Query Playground</h1>
+        <p style="color:#93a0b4;margin:0;font-size:1.02rem;">
+        Run SQL against a sample e-commerce database — or start from a tested template.</p>
+        """,
+        unsafe_allow_html=True,
+    )
 
     conn = get_connection()
     render_sidebar(conn)
@@ -139,6 +178,13 @@ def main() -> None:
 
     if "result" in st.session_state:
         render_results()
+
+    st.markdown("---")
+    st.markdown(
+        f"Built by **David Buchan** · [portfolio](https://reaver1000.github.io) · "
+        "[source on GitHub](https://github.com/Reaver1000/sql-query-builder) · "
+        f"{template_count()} templates, all covered by tests."
+    )
 
 
 if __name__ == "__main__":

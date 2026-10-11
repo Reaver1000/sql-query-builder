@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Reaver1000/sql-query-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/Reaver1000/sql-query-builder/actions/workflows/ci.yml)
 
+**Live demo:** [sql-query-builder-uzsrs2gl2af8avqsxappchw.streamlit.app](https://sql-query-builder-uzsrs2gl2af8avqsxappchw.streamlit.app)
+
 An interactive SQL playground built with Streamlit and DuckDB. It contains **55 tested query templates**, and the test suite executes every template against a deterministic sample database so the claim cannot silently drift.
 
 ```bash
