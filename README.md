@@ -40,3 +40,14 @@ The original version of this repo claimed "50+ templates" and shipped 8. The fix
 - **DuckDB over SQLite** for the analytical dialect: `QUALIFY`, `FILTER`, `ROLLUP`, `PERCENTILE_CONT`, and date `generate_series` all appear in the library.
 - **Deterministic sample data** (seeded RNG in `sample_data.py`) so template output is reproducible and testable.
 - **Templates live in data, not UI code** (`templates.py` / `templates_advanced.py`) — the app renders whatever the library contains, and the tests import the same source of truth.
+
+---
+
+## Author
+
+**David Buchan** — Junior AI Engineer & Data Analyst
+- Fully remote worldwide · Erfurt, Germany (UK citizen)
+- Skills: Python, SQL, ETL, LLM APIs, n8n, QA automation, test automation
+- Portfolio: https://reaver1000.github.io
+- LinkedIn: https://www.linkedin.com/in/david-a-buchan/
+- Hugging Face: https://huggingface.co/Reaver1000
